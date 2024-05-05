@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qaudrature"
+version = "0.0.1"
+requires-python = "~=3.9"
+dependencies = [
+    "notebook",
+    "amaranth[builtin-yosys]",
+    "myhdlpeek",
+    "pytest"
+]
+
+[tool.poe.tasks]
+run = "python main.py"
+
