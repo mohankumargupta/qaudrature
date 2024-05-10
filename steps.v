@@ -7,7 +7,7 @@ module top(direction, clk, rst, step);
   (* src = "c:\\Users\\mohan\\Developer\\verilog\\qaudrature\\steps.py:35" *)
   wire \$1 ;
   (* src = "c:\\Users\\mohan\\Developer\\verilog\\qaudrature\\steps.py:38" *)
-  wire [5:0] \$10 ;
+  wire [16:0] \$10 ;
   (* src = "c:\\Users\\mohan\\Developer\\verilog\\qaudrature\\steps.py:36" *)
   wire \$3 ;
   (* src = "c:\\Users\\mohan\\Developer\\verilog\\qaudrature\\steps.py:37" *)
@@ -15,7 +15,7 @@ module top(direction, clk, rst, step);
   (* src = "c:\\Users\\mohan\\Developer\\verilog\\qaudrature\\steps.py:35" *)
   wire \$7 ;
   (* src = "c:\\Users\\mohan\\Developer\\verilog\\qaudrature\\steps.py:38" *)
-  wire [5:0] \$9 ;
+  wire [16:0] \$9 ;
   (* src = "c:\\Users\\mohan\\Developer\\verilog\\qaudrature\\steps.py:24" *)
   reg aa = 1'h0;
   (* src = "c:\\Users\\mohan\\Developer\\verilog\\qaudrature\\steps.py:24" *)
@@ -28,9 +28,9 @@ module top(direction, clk, rst, step);
   input clk;
   wire clk;
   (* src = "c:\\Users\\mohan\\Developer\\verilog\\qaudrature\\steps.py:27" *)
-  reg [4:0] counter = 5'h00;
+  reg [15:0] counter = 16'h0000;
   (* src = "c:\\Users\\mohan\\Developer\\verilog\\qaudrature\\steps.py:27" *)
-  reg [4:0] \counter$next ;
+  reg [15:0] \counter$next ;
   (* src = "c:\\Users\\mohan\\Developer\\verilog\\qaudrature\\steps.py:9" *)
   output direction;
   wire direction;
@@ -47,10 +47,10 @@ module top(direction, clk, rst, step);
     aa <= \aa$next ;
   always @(posedge clk)
     counter <= \counter$next ;
-  assign \$1  = counter < (* src = "c:\\Users\\mohan\\Developer\\verilog\\qaudrature\\steps.py:35" *) 4'he;
-  assign \$3  = counter > (* src = "c:\\Users\\mohan\\Developer\\verilog\\qaudrature\\steps.py:36" *) 2'h2;
+  assign \$1  = counter < (* src = "c:\\Users\\mohan\\Developer\\verilog\\qaudrature\\steps.py:35" *) 8'hd6;
+  assign \$3  = counter > (* src = "c:\\Users\\mohan\\Developer\\verilog\\qaudrature\\steps.py:36" *) 8'hca;
   assign \$5  = ~ (* src = "c:\\Users\\mohan\\Developer\\verilog\\qaudrature\\steps.py:37" *) aa;
-  assign \$7  = counter < (* src = "c:\\Users\\mohan\\Developer\\verilog\\qaudrature\\steps.py:35" *) 4'he;
+  assign \$7  = counter < (* src = "c:\\Users\\mohan\\Developer\\verilog\\qaudrature\\steps.py:35" *) 8'hd6;
   always @* begin
     if (\$auto$verilog_backend.cc:2352:dump_module$1 ) begin end
     \bb$next  = 1'h1;
@@ -82,11 +82,11 @@ module top(direction, clk, rst, step);
     \counter$next  = counter;
     (* src = "c:\\Users\\mohan\\Developer\\verilog\\qaudrature\\steps.py:35" *)
     if (\$7 ) begin
-      \counter$next  = \$10 [4:0];
+      \counter$next  = \$10 [15:0];
     end
     (* src = "c:\\Users\\mohan\\Developer\\verilog\\qaudrature\\.venv\\Lib\\site-packages\\amaranth\\hdl\\xfrm.py:503" *)
     if (rst) begin
-      \counter$next  = 5'h00;
+      \counter$next  = 16'h0000;
     end
   end
   assign \$9  = \$10 ;

@@ -24,7 +24,7 @@ class Steps(Elaboratable):
         aa = Signal(1)
         bb = Signal(1)
 
-        counter = Signal(5)
+        counter = Signal(16)
 
         m.d.comb += [
             self.step.eq(aa),
@@ -32,8 +32,8 @@ class Steps(Elaboratable):
         ]
             
         m.d.sync += bb.eq(1)
-        with m.If(counter < 14):
-            with m.If(counter > 2):
+        with m.If(counter < 214):
+            with m.If(counter > 202):
                 m.d.sync += aa.eq(~aa)
             m.d.sync += counter.eq(counter + 1)
         with m.Else():
